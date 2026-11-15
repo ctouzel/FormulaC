@@ -9,13 +9,14 @@ On avance par petites étapes. Chaque étape donne quelque chose qu'on peut
 - [x] Feuille de route (ce fichier)
 - [x] `CLAUDE.md` : les règles du projet pour Claude
 
-## Étape 1 — Le moteur de règles, sans graphismes
+## Étape 1 — Le moteur de règles, sans graphismes ✅
 
-- [ ] Squelette du projet (`package.json`, dossiers `src/` et `tests/`)
-- [ ] Générateur aléatoire avec graine
-- [ ] Les dés de la boîte de vitesses
-- [ ] Les changements de rapport et leur coût en usure
-- [ ] Tests automatiques pour tout ça
+- [x] Squelette du projet (`package.json`, dossiers `src/` et `tests/`)
+- [x] Générateur aléatoire avec graine
+- [x] Les dés de la boîte de vitesses
+- [x] Les changements de rapport et leur coût en usure
+- [x] Tests automatiques pour tout ça
+- [x] Bonus : `npm run demo` affiche la répartition de chaque dé
 
 **Résultat :** `npm test` passe au vert.
 

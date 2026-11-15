@@ -67,7 +67,23 @@ Chaque voiture commence avec une réserve de points (exemple : 18 au total).
 | Carrosserie | 2      | Encaisser une collision                                 |
 
 Quand une catégorie tombe à 0 et qu'on aurait dû en dépenser encore, la voiture
-est **éliminée** (abandon).
+est **éliminée** (abandon). Tomber pile à 0 n'élimine pas.
+
+**Coût d'une descente de rapports.** Descendre de *n* rapports coûte :
+
+- *n* − 1 points de **boîte** (chaque rapport au-delà du premier) ;
+- *n* − 2 points de **moteur**, à partir de 3 rapports (chaque rapport au-delà
+  du deuxième).
+
+| Descente | Exemple | Boîte | Moteur |
+|:--------:|:-------:|:-----:|:------:|
+| 1        | 5 → 4   | 0     | 0      |
+| 2        | 5 → 3   | 1     | 0      |
+| 3        | 6 → 3   | 2     | 1      |
+| 4        | 6 → 2   | 3     | 2      |
+| 5        | 6 → 1   | 4     | 3 (élimination avec la réserve de départ) |
+
+Au départ de la course, toutes les voitures sont en rapport 1.
 
 ## 6. Les virages
 

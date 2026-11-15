@@ -1,0 +1,14 @@
+{
+  "name": "formulac",
+  "version": "0.1.0",
+  "description": "Jeu de course au tour par tour dans le navigateur",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "demo": "node scripts/demo-des.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
