@@ -20,11 +20,12 @@ On avance par petites étapes. Chaque étape donne quelque chose qu'on peut
 
 **Résultat :** `npm test` passe au vert.
 
-## Étape 2 — La piste
+## Étape 2 — La piste ✅
 
-- [ ] Format de données d'une piste (fichier JSON)
-- [ ] Une petite piste ovale de test avec 2 virages
-- [ ] Calcul des déplacements possibles (chemins, changements de voie, cases occupées)
+- [x] Format de données d'une piste (fichier JSON), avec vérification
+- [x] Une petite piste ovale de test avec 2 virages (`pistes/ovale-essai.json`)
+- [x] Calcul des déplacements possibles (chemins, changements de voie, cases occupées, freinage)
+- [x] Bonus : `npm run piste` dessine les arrivées possibles dans le terminal
 
 **Résultat :** on peut demander « où peut aller cette voiture avec un 7 ? ».
 

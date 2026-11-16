@@ -1,0 +1,9 @@
+{
+  "nom": "Ovale d'essai",
+  "voies": 3,
+  "longueur": 48,
+  "virages": [
+    { "nom": "V1", "debut": 12, "fin": 17, "arrets": 2 },
+    { "nom": "V2", "debut": 36, "fin": 41, "arrets": 1 }
+  ]
+}

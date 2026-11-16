@@ -16,12 +16,33 @@ dé propre à chaque rapport, et on doit freiner à temps avant les virages.
 
 ## 2. La piste
 
-- La piste est une suite de **cases**. Elle a 2 ou 3 **voies** côte à côte.
-- Chaque case connaît ses cases suivantes possibles : tout droit, ou en
-  diagonale vers la voie voisine (changement de voie).
-- Les **virages** sont des zones de cases marquées, avec un nombre d'**arrêts
-  requis** (1, 2 ou 3) et une **ligne de sortie**.
+- La piste est une **grille en boucle** : des **colonnes** (de 0 à
+  longueur − 1) et 2 ou 3 **voies** côte à côte. La ligne de départ est avant
+  la colonne 0.
+- **Un pas** = avancer d'une colonne, en restant dans sa voie ou en diagonale
+  vers une voie voisine. On ne change donc que d'une voie par pas.
+- Dans un virage, toutes les voies ont la même longueur : prendre la corde ne
+  fait pas gagner de cases (modèle simple, choisi pour démarrer).
+- **On ne traverse pas une voiture** : une case occupée est infranchissable,
+  il faut la contourner par une voie libre. Si on est bloqué, on avance de
+  moins que le dé en payant des points de **freins** (voir 5).
+- Les **virages** sont des plages de colonnes, avec un nombre d'**arrêts
+  requis** (1, 2 ou 3). La **ligne de sortie** est juste après leur dernière
+  colonne.
 - Une course dure 1 à 3 tours (réglable).
+
+Format d'un fichier de piste (`pistes/*.json`) :
+
+```json
+{
+  "nom": "Ovale d'essai",
+  "voies": 3,
+  "longueur": 48,
+  "virages": [
+    { "nom": "V1", "debut": 12, "fin": 17, "arrets": 2 }
+  ]
+}
+```
 
 ## 3. Le tour de jeu
 
