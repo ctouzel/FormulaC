@@ -46,7 +46,22 @@ Format d'un fichier de piste (`pistes/*.json`) :
 
 ## 3. Le tour de jeu
 
-L'ordre de jeu suit le classement : la voiture en tête joue en premier.
+**Départ.** L'ordre de la grille est tiré au hasard (avec la graine de la
+partie). Les voitures se placent 2 par rangée derrière la ligne : la 1re sur
+la voie extérieure, la 2e sur la voie 0, puis la rangée suivante une colonne
+plus loin derrière. Toutes partent en rapport 1. Une course dure **2 tours**
+par défaut.
+
+**Ordre de jeu.** Au début de chaque tour de jeu, l'ordre suit le classement :
+la voiture la plus avancée joue en premier ; à égalité, celle qui jouait avant
+garde son avance. L'ordre ne change pas pendant le tour de jeu.
+
+**Arrivée.** Une voiture qui franchit la ligne au dernier tour est classée
+dans l'ordre d'arrivée et quitte la piste. La course se termine quand plus
+aucune voiture n'est en course.
+
+**Abandon.** Une voiture éliminée (casse, sortie de piste) est **retirée de la
+piste** tout de suite et classée en fin de classement.
 
 À son tour, une voiture :
 
@@ -114,6 +129,9 @@ Au départ de la course, toutes les voitures sont en rapport 1.
   - il lui manquait 1 arrêt : elle paie en points de **pneus**, 1 par case
     dépassée au-delà de la ligne ;
   - il lui manquait 2 arrêts ou plus : **sortie de piste**, élimination.
+- Un déplacement de 0 case (freinage complet) dans un virage compte aussi
+  comme un arrêt.
+- Les arrêts ne valent que pour le virage où ils ont été faits.
 
 ## 7. L'aspiration
 
@@ -128,11 +146,21 @@ elle peut avancer de **3 cases bonus**. Ces cases peuvent la faire dépasser.
 
 ## 9. L'ordinateur (IA)
 
-Premier niveau d'IA, simple et prévisible :
+Premier niveau d'IA, simple et prudente (`src/moteur/ia.js`) :
 
-- Elle regarde la distance jusqu'au prochain virage et les arrêts requis.
-- Elle choisit le rapport le plus élevé dont le pire cas reste « sûr ».
-- Elle choisit le chemin qui l'amène le plus loin sans dépenser de points.
+- **Rapport** : pour chaque rapport permis, elle essaie *tous* les résultats
+  possibles du dé et garde, pour chacun, la meilleure option. Le « pire cas »
+  d'un rapport est le coût de son plus mauvais résultat, plus le coût du
+  changement de rapport. Elle choisit le pire cas le plus bas ; à égalité, le
+  rapport qui avance le plus en moyenne.
+- **Déplacement** : l'option qui n'élimine pas, qui coûte le moins de points,
+  puis qui va le plus loin.
+- Limite connue : elle ne voit qu'un coup à l'avance. Elle arrive parfois trop
+  vite à un virage et doit alors dépenser de la boîte pour rétrograder.
+
+Mesure sur 200 courses de 6 voitures (ovale d'essai, 2 tours) : environ 18
+tours de jeu par course, aucune élimination, 14 points d'usure restants sur 18
+en moyenne.
 
 On rendra l'IA plus fine plus tard (prise de risque, aspiration, etc.).
 

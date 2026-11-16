@@ -29,12 +29,12 @@ On avance par petites étapes. Chaque étape donne quelque chose qu'on peut
 
 **Résultat :** on peut demander « où peut aller cette voiture avec un 7 ? ».
 
-## Étape 3 — Une course complète dans le terminal
+## Étape 3 — Une course complète dans le terminal ✅
 
-- [ ] Virages et arrêts requis
-- [ ] Ordre de jeu, tours de piste, arrivée
-- [ ] IA de base
-- [ ] Un script qui fait courir 4 voitures IA et affiche le résultat
+- [x] Virages et arrêts requis (`src/moteur/virages.js`)
+- [x] Grille, ordre de jeu, tours de piste, arrivée, abandons (`src/moteur/course.js`)
+- [x] IA de base (`src/moteur/ia.js`)
+- [x] Un script qui fait courir des voitures IA et raconte la course (`npm run course`)
 
 **Résultat :** on regarde une course entière se dérouler en texte.
 
