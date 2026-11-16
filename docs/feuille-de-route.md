@@ -38,11 +38,13 @@ On avance par petites étapes. Chaque étape donne quelque chose qu'on peut
 
 **Résultat :** on regarde une course entière se dérouler en texte.
 
-## Étape 4 — Le navigateur
+## Étape 4 — Le navigateur ✅
 
-- [ ] Page web qui dessine la piste et les voitures
-- [ ] Animation des tours de l'IA
-- [ ] Écran de départ : nombre de voitures, humain ou ordinateur pour chacune
+- [x] Page web qui dessine la piste et les voitures (SVG, forme calculée depuis le JSON)
+- [x] Animation des tours de l'IA (lecture, pause, coup par coup, 4 vitesses)
+- [x] Écran de départ : nombre de voitures, tours, graine, nom de chaque voiture
+- [ ] Choix humain / ordinateur : présent mais désactivé, il s'active à l'étape 5
+- [x] Petit serveur local sans dépendance (`npm run serveur`)
 
 **Résultat :** on regarde une course dans le navigateur.
 

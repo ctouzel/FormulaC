@@ -8,7 +8,8 @@
     "test": "node --test",
     "demo": "node scripts/demo-des.js",
     "piste": "node scripts/montrer-piste.js",
-    "course": "node scripts/course-texte.js"
+    "course": "node scripts/course-texte.js",
+    "serveur": "node scripts/serveur.js"
   },
   "engines": {
     "node": ">=20"

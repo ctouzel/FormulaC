@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FormulaC</title>
+    <link rel="stylesheet" href="src/interface/style.css" />
+  </head>
+  <body>
+    <header class="entete">
+      <h1>Formula<span>C</span></h1>
+      <p id="sous-titre" class="sous-titre"></p>
+    </header>
+
+    <main class="jeu">
+      <section class="zone-piste">
+        <svg id="piste" role="img" aria-label="Piste de course vue de dessus"></svg>
+      </section>
+
+      <aside class="panneau">
+        <div class="controles">
+          <button id="btn-lecture" class="principal" type="button">▶ Lecture</button>
+          <button id="btn-coup" type="button">⏭ Coup suivant</button>
+          <label class="vitesse">
+            Vitesse
+            <select id="vitesse">
+              <option value="lente">Lente</option>
+              <option value="normale" selected>Normale</option>
+              <option value="rapide">Rapide</option>
+              <option value="eclair">Éclair</option>
+            </select>
+          </label>
+          <button id="btn-nouvelle" type="button">↺ Nouvelle course</button>
+        </div>
+
+        <div id="coup-en-cours" class="coup-en-cours" aria-live="polite"></div>
+
+        <h2>Classement</h2>
+        <table id="classement" class="classement"></table>
+        <p class="legende">Usure : P pneus · F freins · B boîte · M moteur · C carrosserie</p>
+
+        <h2>Journal</h2>
+        <ol id="journal" class="journal"></ol>
+      </aside>
+    </main>
+
+    <dialog id="ecran-depart" class="ecran">
+      <form id="form-depart" method="dialog">
+        <h2>Nouvelle course</h2>
+        <div class="reglages">
+          <label>Voitures <select id="nb-voitures"></select></label>
+          <label>Tours <select id="nb-tours"><option>1</option><option selected>2</option><option>3</option></select></label>
+          <label>
+            Graine
+            <span class="graine">
+              <input id="graine" type="number" step="1" />
+              <button id="btn-graine" type="button" title="Tirer une graine au hasard">🎲</button>
+            </span>
+          </label>
+        </div>
+        <ul id="liste-voitures" class="liste-voitures"></ul>
+        <p class="note">Le pilotage humain arrive à l'étape 5. Pour l'instant, l'ordinateur pilote toutes les voitures.</p>
+        <button class="principal" type="submit">Démarrer</button>
+      </form>
+    </dialog>
+
+    <dialog id="ecran-fin" class="ecran">
+      <h2>🏁 Arrivée</h2>
+      <ol id="resultats" class="resultats"></ol>
+      <div class="actions">
+        <button id="btn-revoir" type="button">Fermer</button>
+        <button id="btn-rejouer" class="principal" type="button">Nouvelle course</button>
+      </div>
+    </dialog>
+
+    <script type="module" src="src/interface/app.js"></script>
+  </body>
+</html>
